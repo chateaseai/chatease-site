@@ -5,66 +5,37 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative pt-10 md:pt-16 pb-10 md:pb-16 overflow-hidden">
-        <div className="hero-sheen" />
+      <section className="section-hero pt-12 md:pt-20 pb-12 md:pb-20">
         <div className="container grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/80 border border-slate-200 px-3 py-1 text-xs text-slate-700 shadow-sm">
-              <span>⚡</span> Smarter support. More sales. Zero headcount.
-            </div>
-            <h1 className="mt-5 text-4xl md:text-5xl font-bold tracking-tight">
-              Turn <span className="gradient-text">chats into customers</span> with ChatEase
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              Turn conversations into customers — automatically
             </h1>
-            <p className="mt-4 text-slate-600 text-lg leading-relaxed">
-              We design, build, and optimize AI chatbots that answer questions, capture leads, and
-              book appointments—so your business grows 24/7.
+            <p className="mt-4 text-slate-700 text-lg leading-relaxed">
+              Done-for-you AI chatbots that answer questions, capture leads, and book appointments.
+              Clear setup, measurable results, and ongoing optimization.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <a href="/contact#demo" className="btn-primary">Request Free Demo</a>
-              <a href="/pricing" className="btn-outline">See Pricing</a>
+              <a href="/contact#demo" className="btn-cta">Request Free Demo</a>
+              <a href="/pricing" className="btn-secondary">See Pricing</a>
             </div>
-            <div className="mt-6 flex items-center gap-4 text-sm text-slate-500 flex-wrap">
-              <div className="flex items-center gap-2">✓ 14-day optimization included</div>
-              <div className="flex items-center gap-2">✓ Privacy-first setup</div>
-              <div className="flex items-center gap-2">✓ Works on web & mobile</div>
+            <div className="mt-6 flex items-center gap-4 text-sm text-slate-600 flex-wrap">
+              <div>✓ 14-day optimization included</div>
+              <div>✓ Privacy-first setup</div>
+              <div>✓ Works on web & mobile</div>
             </div>
           </div>
+          {/* abstract visual */}
           <div className="relative">
-            <div className="aspect-[4/3] w-full hero-card">
-              <div className="grid grid-cols-3 gap-4 h-full">
-                <div className="col-span-2 flex flex-col gap-3">
-                  <div className="card p-4 flex items-center gap-3 shadow-none">
-                    <div className="font-medium">Visitor</div>
-                    <div className="text-sm text-slate-500">Do you ship internationally?</div>
-                  </div>
-                  <div className="card p-4 flex items-center gap-3 shadow-none bg-gradient-to-r from-sky/20 to-success/20">
-                    <div className="font-medium">ChatEase Bot</div>
-                    <div className="text-sm text-slate-700">Yes! Free shipping over $50. Want 10% off?</div>
-                  </div>
-                  <div className="card p-4 flex items-center gap-3 shadow-none">
-                    <div className="font-medium">Visitor</div>
-                    <div className="text-sm text-slate-500">Book me a 15-min demo.</div>
-                  </div>
-                </div>
-                <div className="col-span-1 flex flex-col gap-3">
-                  <div className="h-full rounded-2xl border border-slate-200 p-4 text-sm text-slate-600 bg-white/70">
-                    <div className="font-semibold">Automation Flow</div>
-                    <ul className="list-disc ml-5 mt-2 space-y-2">
-                      <li>FAQ answers</li>
-                      <li>Collect email</li>
-                      <li>Send to CRM</li>
-                      <li>Book meeting</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <div className="card p-0 overflow-hidden">
+              <div className="h-56 md:h-72 w-full" style={{background: 'radial-gradient(1200px 280px at 10% 0%, rgba(56,189,248,0.25), transparent 40%), radial-gradient(800px 260px at 90% 10%, rgba(124,58,237,0.25), transparent 45%), radial-gradient(900px 280px at 50% 100%, rgba(34,197,94,0.20), transparent 40%)'}} />
             </div>
           </div>
         </div>
       </section>
 
       {/* Why ChatEase */}
-      <Section id="why" title="Why ChatEase?" subtitle="Smarter support, more leads, zero extra headcount.">
+      <Section className="section-why" id="why" title="Why ChatEase?" subtitle="Smarter support, more leads, zero extra headcount.">
         <div className="grid md:grid-cols-3 gap-6">
           <div className="card">
             <h3 className="font-semibold text-lg">Always On</h3>
@@ -82,14 +53,14 @@ export default function Home() {
       </Section>
 
       {/* Services preview */}
-      <Section id="services" title="Services" subtitle="Pick a package or ask for a custom setup.">
+      <Section className="section-services" id="services" title="Services" subtitle="Pick a package or ask for a custom setup.">
         <div className="grid md:grid-cols-3 gap-6">
           <div className="card">
             <h4 className="font-semibold text-lg">Basic Setup</h4>
             <p className="mt-2 text-slate-600">FAQ bot, lead capture, website integration.</p>
             <p className="mt-4 font-medium">From $299</p>
           </div>
-          <div className="card">
+          <div className="card border-2 border-sky/40">
             <h4 className="font-semibold text-lg">Advanced Automation</h4>
             <p className="mt-2 text-slate-600">AI responses + CRM/email integration + workflows.</p>
             <p className="mt-4 font-medium">From $699</p>
@@ -101,16 +72,34 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-6">
-          <a href="/services" className="btn-outline">Explore Services</a>
+          <a href="/services" className="btn-secondary">Explore Services</a>
+        </div>
+      </Section>
+
+      {/* How it works */}
+      <Section id="how" title="How it works" subtitle="From hello to booked in three simple steps.">
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="card">
+            <h4 className="font-semibold">1) Ask</h4>
+            <p className="text-slate-600 mt-2">Customers chat on your site or socials. The bot understands intent and context.</p>
+          </div>
+          <div className="card">
+            <h4 className="font-semibold">2) Answer</h4>
+            <p className="text-slate-600 mt-2">AI gives accurate replies trained on your pages, docs, and FAQs.</p>
+          </div>
+          <div className="card">
+            <h4 className="font-semibold">3) Act</h4>
+            <p className="text-slate-600 mt-2">Capture leads, send to CRM, or book meetings—automatically.</p>
+          </div>
         </div>
       </Section>
 
       {/* CTA Banner */}
-      <Section id="cta" narrow>
-        <div className="card text-center bg-gradient-to-r from-white to-slate-50">
+      <Section id="cta" className="section-cta" narrow>
+        <div className="card text-center">
           <h3 className="text-2xl font-bold">Ready to grow with AI?</h3>
-          <p className="mt-2 text-slate-600">Get a free demo tailored to your business.</p>
-          <a href="/contact#demo" className="btn-primary mt-4">Book a Free Demo</a>
+          <p className="mt-2 text-slate-700">Get a free demo tailored to your business.</p>
+          <a href="/contact#demo" className="btn-cta mt-4 inline-block">Book a Free Demo</a>
         </div>
       </Section>
     </div>

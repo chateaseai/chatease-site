@@ -15,8 +15,9 @@ export default function Pricing() {
               <li>Lead capture to email/Sheet</li>
             </ul>
           </div>
-          <div className="card border-2 border-success">
-            <h4 className="font-semibold text-lg">Pro</h4>
+          <div className="card border-2 border-sky/40 relative">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs bg-sky text-white px-3 py-1 rounded-full shadow">Most popular</span>
+            <h4 className="font-semibold text-lg mt-2">Pro</h4>
             <p className="text-3xl font-bold mt-2">$699</p>
             <ul className="mt-3 list-disc ml-5 space-y-2 text-slate-600">
               <li>AI responses (docs/URL training)</li>
@@ -35,7 +36,7 @@ export default function Pricing() {
           </div>
         </div>
         <div className="mt-6">
-          <a href="/contact" className="btn-primary">Request a Custom Quote</a>
+          <a href="/contact" className="btn-cta">Request a Custom Quote</a>
         </div>
       </Section>
     </div>

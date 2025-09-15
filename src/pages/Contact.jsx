@@ -26,7 +26,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="mt-4 flex items-center gap-3">
-            <button className="btn-primary" type="submit">Request Free Demo</button>
+            <button className="btn-cta" type="submit">Request Free Demo</button>
             <span className="text-sm text-slate-500">We respond within 24 hours.</span>
           </div>
         </form>

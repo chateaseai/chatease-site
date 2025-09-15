@@ -15,7 +15,7 @@ export default function Services() {
             </ul>
             <p className="mt-4 font-medium">From $299</p>
           </div>
-          <div className="card">
+          <div className="card border-2 border-sky/40">
             <h4 className="font-semibold text-lg">Advanced Automation</h4>
             <ul className="mt-3 list-disc ml-5 space-y-2 text-slate-600">
               <li>AI responses trained on your docs</li>

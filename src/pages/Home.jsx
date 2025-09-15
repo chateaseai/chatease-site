@@ -5,37 +5,41 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="pt-10 md:pt-16 pb-10 md:pb-16">
+      <section className="relative pt-10 md:pt-16 pb-10 md:pb-16 overflow-hidden">
+        <div className="hero-sheen" />
         <div className="container grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <div className="badge">AI chatbots that work while you sleep</div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/80 border border-slate-200 px-3 py-1 text-xs text-slate-700 shadow-sm">
+              <span>⚡</span> Smarter support. More sales. Zero headcount.
+            </div>
             <h1 className="mt-5 text-4xl md:text-5xl font-bold tracking-tight">
-              Turn chats into customers with <span className="text-navy">ChatEase</span>
+              Turn <span className="gradient-text">chats into customers</span> with ChatEase
             </h1>
             <p className="mt-4 text-slate-600 text-lg leading-relaxed">
               We design, build, and optimize AI chatbots that answer questions, capture leads, and
-              book appointments—so your business grows 24/7 without extra headcount.
+              book appointments—so your business grows 24/7.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <a href="/contact#demo" className="btn-primary">Request Free Demo</a>
               <a href="/pricing" className="btn-outline">See Pricing</a>
             </div>
-            <div className="mt-6 flex items-center gap-4 text-sm text-slate-500">
-              <div className="flex items-center gap-2">✓ 14‑day optimization included</div>
-              <div className="flex items-center gap-2">✓ Privacy‑first setup</div>
+            <div className="mt-6 flex items-center gap-4 text-sm text-slate-500 flex-wrap">
+              <div className="flex items-center gap-2">✓ 14-day optimization included</div>
+              <div className="flex items-center gap-2">✓ Privacy-first setup</div>
+              <div className="flex items-center gap-2">✓ Works on web & mobile</div>
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-[4/3] w-full card">
+            <div className="aspect-[4/3] w-full hero-card">
               <div className="grid grid-cols-3 gap-4 h-full">
                 <div className="col-span-2 flex flex-col gap-3">
                   <div className="card p-4 flex items-center gap-3 shadow-none">
                     <div className="font-medium">Visitor</div>
                     <div className="text-sm text-slate-500">Do you ship internationally?</div>
                   </div>
-                  <div className="card p-4 flex items-center gap-3 shadow-none">
+                  <div className="card p-4 flex items-center gap-3 shadow-none bg-gradient-to-r from-sky/20 to-success/20">
                     <div className="font-medium">ChatEase Bot</div>
-                    <div className="text-sm text-slate-500">Yes! Free shipping over $50. Want 10% off?</div>
+                    <div className="text-sm text-slate-700">Yes! Free shipping over $50. Want 10% off?</div>
                   </div>
                   <div className="card p-4 flex items-center gap-3 shadow-none">
                     <div className="font-medium">Visitor</div>
@@ -43,7 +47,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="col-span-1 flex flex-col gap-3">
-                  <div className="h-full rounded-2xl border border-slate-200 p-4 text-sm text-slate-600">
+                  <div className="h-full rounded-2xl border border-slate-200 p-4 text-sm text-slate-600 bg-white/70">
                     <div className="font-semibold">Automation Flow</div>
                     <ul className="list-disc ml-5 mt-2 space-y-2">
                       <li>FAQ answers</li>
@@ -103,7 +107,7 @@ export default function Home() {
 
       {/* CTA Banner */}
       <Section id="cta" narrow>
-        <div className="card text-center">
+        <div className="card text-center bg-gradient-to-r from-white to-slate-50">
           <h3 className="text-2xl font-bold">Ready to grow with AI?</h3>
           <p className="mt-2 text-slate-600">Get a free demo tailored to your business.</p>
           <a href="/contact#demo" className="btn-primary mt-4">Book a Free Demo</a>

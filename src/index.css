@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 1rem;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-2xl bg-success px-5 py-3 font-medium text-white hover:opacity-90 transition;
+}
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-2xl border border-slate-300 px-5 py-3 font-medium text-slate-700 hover:bg-white/60 transition;
+}
+.card {
+  @apply rounded-2xl bg-white p-6 border border-slate-200 shadow-soft;
+}
+.container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+.nav-link {
+  @apply text-sm text-slate-700 hover:text-slate-900;
+}
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 text-xs text-slate-600;
+}

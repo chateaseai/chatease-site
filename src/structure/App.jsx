@@ -54,11 +54,6 @@ export default function App() {
       <main>
         <Outlet />
       </main>
-      <div className="sticky-cta">
-        <div className="sticky-cta-inner">
-          <a href="/contact#demo" className="btn-cta">Request Free Demo</a>
-        </div>
-      </div>
       <footer className="mt-16 border-t border-slate-200">
         <div className="container py-10 text-sm text-slate-600 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
           <div className="flex items-center gap-2">

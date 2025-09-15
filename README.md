@@ -1,8 +1,5 @@
-# ChatEase – v3.2 (richer color + nav chips + image logo option)
+# ChatEase – v3.3
 
-- Image-first logo (use `/public/logo-chatease.png` to override; SVG fallback provided)
-- Deeper, more inviting backgrounds (site-level gradient + pattern)
-- Color-coded nav chips (hover/active gradients per page)
-- Section tints a touch stronger than v3.1
-
-Deploy: `npm install && npm run build` → publish `dist`
+- Original logo: now uses `public/logo-chatease.png` (place your file there).
+- About button: updated to a distinct pink→orange gradient chip.
+- Background: modern cool gradient (teal → light blue → soft violet).

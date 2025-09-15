@@ -28,7 +28,7 @@ export default function Home() {
           {/* abstract visual */}
           <div className="relative">
             <div className="card p-0 overflow-hidden">
-              <div className="h-56 md:h-72 w-full" style={{background: 'radial-gradient(1200px 280px at 10% 0%, rgba(56,189,248,0.25), transparent 40%), radial-gradient(800px 260px at 90% 10%, rgba(124,58,237,0.25), transparent 45%), radial-gradient(900px 280px at 50% 100%, rgba(34,197,94,0.20), transparent 40%)'}} />
+              <div className="h-56 md:h-72 w-full" style={{background: 'radial-gradient(1200px 280px at 10% 0%, rgba(56,189,248,0.28), transparent 40%), radial-gradient(800px 260px at 90% 10%, rgba(124,58,237,0.28), transparent 45%), radial-gradient(900px 280px at 50% 100%, rgba(34,197,94,0.24), transparent 40%)'}} />
             </div>
           </div>
         </div>

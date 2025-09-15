@@ -1,5 +1,7 @@
-# ChatEase – v3.3
+# ChatEase – v3.4
 
-- Original logo: now uses `public/logo-chatease.png` (place your file there).
-- About button: updated to a distinct pink→orange gradient chip.
-- Background: modern cool gradient (teal → light blue → soft violet).
+Fixes & polish:
+- Logo now has a built-in fallback (PNG → SVG) so it always renders
+- Navigation restyled: subtle pills + active underline (less visual noise)
+- Deeper modern-cool background so the page doesn't feel white/flat
+- Layout hardening to avoid any left-shift; containers centered consistently

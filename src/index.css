@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* App background: modern cool gradient */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; width: 100%; margin: 0; }
+body { overflow-x: hidden; }
+
+/* Deeper modern-cool gradient */
 .app-bg {
-  background: linear-gradient(135deg, #DFFEF7 0%, #E0F2FE 40%, #EDE9FE 100%);
+  background: radial-gradient(1200px 500px at 10% -10%, rgba(56,189,248,0.18), transparent 60%),
+              radial-gradient(1200px 500px at 90% 0%, rgba(124,58,237,0.16), transparent 60%),
+              linear-gradient(135deg, #C4FAF0 0%, #C6E4FF 48%, #D9CEFF 100%);
 }
 
 /* Buttons */
@@ -12,15 +18,36 @@
 .btn-secondary { @apply inline-flex items-center justify-center rounded-2xl border border-navy/20 px-5 py-3 font-medium text-navy hover:bg-white/60 transition; }
 .btn-cta { @apply inline-flex items-center justify-center rounded-2xl text-white px-5 py-3 font-semibold; background: linear-gradient(90deg, #38BDF8, #7C3AED); }
 
-/* Nav chips */
-.nav-chip { @apply text-sm px-3 py-2 rounded-full transition border border-transparent; }
-.nav-chip:hover { @apply text-white; }
-.nav-chip.active { @apply text-white shadow; }
+/* Cards & layout */
+.card { @apply rounded-2xl bg-white p-6 border border-slate-200 shadow-soft; }
+.container { @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8; }
 
-/* Per-page chip gradients */
-.chip-home:hover, .chip-home.active { background: linear-gradient(90deg, #38BDF8, #7C3AED); }
-.chip-services:hover, .chip-services.active { background: linear-gradient(90deg, #22C55E, #38BDF8); }
-.chip-pricing:hover, .chip-pricing.active { background: linear-gradient(90deg, #F59E0B, #22C55E); }
-/* About now pink->orange */
-.chip-about:hover, .chip-about.active { background: linear-gradient(90deg, #EC4899, #F97316); }
-.chip-contact:hover, .chip-contact.active { background: linear-gradient(90deg, #EF4444, #F59E0B); }
+/* New nav style: subtle pills + active underline */
+.nav-min { @apply relative text-sm px-3 py-2 rounded-full text-slate-700 transition; }
+.nav-min:hover { @apply bg-white/60 text-slate-900 shadow; }
+.nav-min.active::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 6px;
+  height: 2px;
+  background: linear-gradient(90deg, #38BDF8, #7C3AED);
+  border-radius: 2px;
+}
+
+/* Specific tweak: About gets a warmer hover */
+.nav-about:hover, .nav-about.active { @apply bg-white/70; }
+.nav-about.active::after { background: linear-gradient(90deg, #EC4899, #F97316); }
+
+/* Sections */
+.section-hero { @apply relative overflow-hidden; background-image: theme('backgroundImage.hero'); }
+.section-why { @apply bg-white; }
+.section-services { @apply bg-tint; }
+.section-cta { background-image: theme('backgroundImage.cta'); }
+.section-cta .card { @apply bg-white/90; }
+
+/* Mobile sticky CTA */
+.sticky-cta { @apply fixed bottom-3 left-0 right-0 z-40 md:hidden; }
+.sticky-cta-inner { @apply mx-auto max-w-md px-4; }
+.sticky-cta-inner a { @apply w-full block text-center; }

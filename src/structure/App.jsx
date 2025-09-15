@@ -2,12 +2,12 @@ import React from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import Logo from '../ui/Logo.jsx'
 
-const navItems = [
-  { label: 'Home', path: '/', chip: 'chip-home' },
-  { label: 'Services', path: '/services', chip: 'chip-services' },
-  { label: 'Pricing', path: '/pricing', chip: 'chip-pricing' },
-  { label: 'About', path: '/about', chip: 'chip-about' },
-  { label: 'Contact', path: '/contact', chip: 'chip-contact' },
+const nav = [
+  { label: 'Home', path: '/', cls: 'nav-min' },
+  { label: 'Services', path: '/services', cls: 'nav-min' },
+  { label: 'Pricing', path: '/pricing', cls: 'nav-min' },
+  { label: 'About', path: '/about', cls: 'nav-min nav-about' }, // warmer active underline
+  { label: 'Contact', path: '/contact', cls: 'nav-min' },
 ];
 
 export default function App() {
@@ -25,15 +25,11 @@ export default function App() {
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-2">
-            {navItems.map(({label, path, chip}) => {
-              const active = pathname === path
-              const classes = `nav-chip ${chip} ${active ? 'active' : ''}`
-              return (
-                <NavLink key={label} to={path} className={classes}>
-                  {label}
-                </NavLink>
-              )
-            })}
+            {nav.map(({label, path, cls}) => (
+              <NavLink key={label} to={path} className={({isActive}) => isActive ? `${cls} active` : cls }>
+                {label}
+              </NavLink>
+            ))}
           </nav>
           <div className="hidden md:flex items-center gap-3">
             <a href="/contact#demo" className="btn-cta">Request Free Demo</a>
@@ -43,8 +39,8 @@ export default function App() {
         {menuOpen && (
           <div className="md:hidden border-t border-slate-200 bg-white">
             <div className="container py-3 flex flex-col gap-2">
-              {navItems.map(({label, path, chip}) => (
-                <a key={label} href={path} className={`nav-chip ${chip}`}>{label}</a>
+              {nav.map(({label, path, cls}) => (
+                <a key={label} href={path} className={cls}>{label}</a>
               ))}
               <a href="/contact#demo" className="btn-cta mt-2">Request Free Demo</a>
             </div>

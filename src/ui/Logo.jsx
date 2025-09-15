@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Logo({ small = false }) {
   const size = small ? 28 : 36;
-  const inner = size - 8; // keeps the SVG nicely inset
+  const inner = size - 8;
 
   return (
     <div
@@ -26,7 +26,7 @@ export default function Logo({ small = false }) {
           strokeWidth="6"
           strokeLinecap="round"
         />
-        {/* Spark (simple 8-point star) */}
+        {/* Spark */}
         <path
           d="M52 10 l2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 4 -2 2 -4z"
           fill="#22C55E"

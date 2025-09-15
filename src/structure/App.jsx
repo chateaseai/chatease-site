@@ -1,18 +1,9 @@
 import React from 'react'
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import Logo from '../ui/Logo.jsx'
-
-const nav = [
-  { label: 'Home', path: '/', cls: 'nav-min' },
-  { label: 'Services', path: '/services', cls: 'nav-min' },
-  { label: 'Pricing', path: '/pricing', cls: 'nav-min' },
-  { label: 'About', path: '/about', cls: 'nav-min nav-about' }, // warmer active underline
-  { label: 'Contact', path: '/contact', cls: 'nav-min' },
-];
 
 export default function App() {
   const [menuOpen, setMenuOpen] = React.useState(false)
-  const { pathname } = useLocation()
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 backdrop-blur bg-white/85 border-b border-slate-200">
@@ -25,11 +16,11 @@ export default function App() {
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-2">
-            {nav.map(({label, path, cls}) => (
-              <NavLink key={label} to={path} className={({isActive}) => isActive ? `${cls} active` : cls }>
-                {label}
-              </NavLink>
-            ))}
+            <NavLink to="/"        className={({isActive}) => `nav-item ${isActive ? 'active' : ''}`}>Home</NavLink>
+            <NavLink to="/services" className={({isActive}) => `nav-item ${isActive ? 'active' : ''}`}>Services</NavLink>
+            <NavLink to="/pricing"  className={({isActive}) => `nav-item ${isActive ? 'active' : ''}`}>Pricing</NavLink>
+            <NavLink to="/about"    className={({isActive}) => `nav-item about ${isActive ? 'active' : ''}`}>About</NavLink>
+            <NavLink to="/contact"  className={({isActive}) => `nav-item ${isActive ? 'active' : ''}`}>Contact</NavLink>
           </nav>
           <div className="hidden md:flex items-center gap-3">
             <a href="/contact#demo" className="btn-cta">Request Free Demo</a>
@@ -39,9 +30,11 @@ export default function App() {
         {menuOpen && (
           <div className="md:hidden border-t border-slate-200 bg-white">
             <div className="container py-3 flex flex-col gap-2">
-              {nav.map(({label, path, cls}) => (
-                <a key={label} href={path} className={cls}>{label}</a>
-              ))}
+              <a href="/" className="nav-item">Home</a>
+              <a href="/services" className="nav-item">Services</a>
+              <a href="/pricing" className="nav-item">Pricing</a>
+              <a href="/about" className="nav-item">About</a>
+              <a href="/contact" className="nav-item">Contact</a>
               <a href="/contact#demo" className="btn-cta mt-2">Request Free Demo</a>
             </div>
           </div>

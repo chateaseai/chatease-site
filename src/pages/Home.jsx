@@ -4,13 +4,13 @@ import Section from '../ui/Section.jsx'
 export default function Home() {
   return (
     <div>
-      {/* Hero (single column, no box) */}
+      {/* Hero (narrow, centered) */}
       <section className="section-hero pt-12 md:pt-20 pb-12 md:pb-20">
         <div className="container max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-balance">
             Turn conversations into customers — automatically
           </h1>
-          <p className="mt-4 text-slate-700 text-lg leading-relaxed">
+          <p className="mt-4 text-slate-700 text-lg leading-relaxed measure">
             Done-for-you AI chatbots that answer questions, capture leads, and book appointments.
             Clear setup, measurable results, and ongoing optimization.
           </p>
@@ -18,12 +18,61 @@ export default function Home() {
             <a href="/contact#demo" className="btn-cta">Request Free Demo</a>
             <a href="/pricing" className="btn-secondary">See Pricing</a>
           </div>
-
-          {/* Optional: small trust bar instead of a box */}
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm text-slate-600">
             <div className="badge">✓ 24/7 responses</div>
             <div className="badge">✓ 14-day optimization</div>
             <div className="badge">✓ Privacy-first</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why ChatEase? */}
+      <section className="section-why py-14 md:py-20">
+        <div className="container">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why ChatEase?</h2>
+          <p className="mt-3 text-slate-700 text-lg">Smarter support, more leads, zero extra headcount.</p>
+
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
+            {/* Always On */}
+            <div className="card">
+              <div className="flex items-start gap-3">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" fill="#38BDF8" />
+                  <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <div>
+                  <h3 className="font-semibold text-lg">Always On</h3>
+                  <p className="mt-1 text-slate-600">24/7 automated answers so prospects never wait.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Feels Human */}
+            <div className="card">
+              <div className="flex items-start gap-3">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="12" rx="6" fill="#7C3AED"/>
+                  <path d="M8 18c4-.5 6-2.5 7-5.5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                <div>
+                  <h3 className="font-semibold text-lg">Feels Human</h3>
+                  <p className="mt-1 text-slate-600">Trained on your docs/URLs for accurate, on-brand replies.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Drives Sales */}
+            <div className="card">
+              <div className="flex items-start gap-3">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M3 17l6-6 4 4 7-7" stroke="#22C55E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <div>
+                  <h3 className="font-semibold text-lg">Drives Sales</h3>
+                  <p className="mt-1 text-slate-600">Capture leads, send to your CRM, and book calls automatically.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

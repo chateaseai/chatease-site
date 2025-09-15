@@ -2,15 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Layout guards */
 * { box-sizing: border-box; }
-html, body, #root { height: 100%; width: 100%; margin: 0; }
+html, body, #root { height: 100%; width: 100%; margin: 0; padding: 0; }
 body { overflow-x: hidden; }
+.container { margin-left: auto; margin-right: auto; max-width: 1120px; padding-left: 1rem; padding-right: 1rem; }
+header .container, main .container, footer .container { margin-left: auto; margin-right: auto; }
 
-/* Deeper modern-cool gradient */
+/* Stronger modern-cool background */
 .app-bg {
-  background: radial-gradient(1200px 500px at 10% -10%, rgba(56,189,248,0.18), transparent 60%),
-              radial-gradient(1200px 500px at 90% 0%, rgba(124,58,237,0.16), transparent 60%),
-              linear-gradient(135deg, #C4FAF0 0%, #C6E4FF 48%, #D9CEFF 100%);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(56,189,248,0.25), transparent 60%),
+    radial-gradient(1200px 500px at 90% 0%, rgba(124,58,237,0.22), transparent 60%),
+    linear-gradient(135deg, #AEEFE4 0%, #AED8FF 45%, #C9B9FF 100%);
 }
 
 /* Buttons */
@@ -18,27 +22,8 @@ body { overflow-x: hidden; }
 .btn-secondary { @apply inline-flex items-center justify-center rounded-2xl border border-navy/20 px-5 py-3 font-medium text-navy hover:bg-white/60 transition; }
 .btn-cta { @apply inline-flex items-center justify-center rounded-2xl text-white px-5 py-3 font-semibold; background: linear-gradient(90deg, #38BDF8, #7C3AED); }
 
-/* Cards & layout */
+/* Cards */
 .card { @apply rounded-2xl bg-white p-6 border border-slate-200 shadow-soft; }
-.container { @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8; }
-
-/* New nav style: subtle pills + active underline */
-.nav-min { @apply relative text-sm px-3 py-2 rounded-full text-slate-700 transition; }
-.nav-min:hover { @apply bg-white/60 text-slate-900 shadow; }
-.nav-min.active::after {
-  content: "";
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 6px;
-  height: 2px;
-  background: linear-gradient(90deg, #38BDF8, #7C3AED);
-  border-radius: 2px;
-}
-
-/* Specific tweak: About gets a warmer hover */
-.nav-about:hover, .nav-about.active { @apply bg-white/70; }
-.nav-about.active::after { background: linear-gradient(90deg, #EC4899, #F97316); }
 
 /* Sections */
 .section-hero { @apply relative overflow-hidden; background-image: theme('backgroundImage.hero'); }
@@ -47,7 +32,20 @@ body { overflow-x: hidden; }
 .section-cta { background-image: theme('backgroundImage.cta'); }
 .section-cta .card { @apply bg-white/90; }
 
-/* Mobile sticky CTA */
+/* Nav (balanced) */
+.nav-item { position: relative; font-size: .95rem; padding: .45rem .8rem; border-radius: 9999px; color: #0f172a; transition: all .15s ease; }
+.nav-item:hover { background: rgba(255,255,255,.7); box-shadow: 0 6px 20px -12px rgba(0,0,0,.25); }
+.nav-item.active { background: rgba(255,255,255,.85); }
+.nav-item.active::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 6px; height: 2px; background: linear-gradient(90deg, #38BDF8, #7C3AED); border-radius: 2px; }
+.nav-item.about.active::after { background: linear-gradient(90deg, #EC4899, #F97316); }
+
+/* Readability helpers */
+.text-balance { text-wrap: balance; }
+.measure { max-width: 62ch; }
+
+/* Mobile sticky CTA (optional placeholder) */
+/*
 .sticky-cta { @apply fixed bottom-3 left-0 right-0 z-40 md:hidden; }
 .sticky-cta-inner { @apply mx-auto max-w-md px-4; }
 .sticky-cta-inner a { @apply w-full block text-center; }
+*/

@@ -4,29 +4,31 @@ import Section from '../ui/Section.jsx'
 export default function Home() {
   return (
     <div>
+      {/* Hero (single column, no box) */}
       <section className="section-hero pt-12 md:pt-20 pb-12 md:pb-20">
-        <div className="container grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Turn conversations into customers — automatically
-            </h1>
-            <p className="mt-4 text-slate-700 text-lg leading-relaxed">
-              Done-for-you AI chatbots that answer questions, capture leads, and book appointments.
-              Clear setup, measurable results, and ongoing optimization.
-            </p>
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <a href="/contact#demo" className="btn-cta">Request Free Demo</a>
-              <a href="/pricing" className="btn-secondary">See Pricing</a>
-            </div>
+        <div className="container max-w-3xl">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Turn conversations into customers — automatically
+          </h1>
+          <p className="mt-4 text-slate-700 text-lg leading-relaxed">
+            Done-for-you AI chatbots that answer questions, capture leads, and book appointments.
+            Clear setup, measurable results, and ongoing optimization.
+          </p>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="/contact#demo" className="btn-cta">Request Free Demo</a>
+            <a href="/pricing" className="btn-secondary">See Pricing</a>
           </div>
-          <div className="relative">
-            <div className="card p-0 overflow-hidden">
-              <div className="h-56 md:h-72 w-full" style={{background: 'radial-gradient(1200px 280px at 10% 0%, rgba(56,189,248,0.28), transparent 40%), radial-gradient(800px 260px at 90% 10%, rgba(124,58,237,0.28), transparent 45%), radial-gradient(900px 280px at 50% 100%, rgba(34,197,94,0.24), transparent 40%)'}} />
-            </div>
+
+          {/* Optional: small trust bar instead of a box */}
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm text-slate-600">
+            <div className="badge">✓ 24/7 responses</div>
+            <div className="badge">✓ 14-day optimization</div>
+            <div className="badge">✓ Privacy-first</div>
           </div>
         </div>
       </section>
 
+      {/* Services */}
       <Section className="section-services" id="services" title="Services" subtitle="Pick a package or ask for a custom setup.">
         <div className="grid md:grid-cols-3 gap-6">
           <div className="card">
@@ -47,6 +49,7 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* CTA */}
       <Section id="cta" className="section-cta" narrow>
         <div className="card text-center">
           <h3 className="text-2xl font-bold">Ready to grow with AI?</h3>

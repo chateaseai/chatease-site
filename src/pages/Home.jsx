@@ -26,14 +26,13 @@ export default function Home() {
           <div className="mt-8 flex justify-center gap-3">
             <Link
               to="/contact"
-              className="rounded-lg px-5 py-3 bg-gradient-to-r from-sky-400 to-violet-600 text-white font-medium shadow-sm"
+              className="rounded-lg px-5 py-3 bg-gradient-to-r from-violet-600 to-sky-400 text-white font-medium shadow-md"
             >
               Request a demo
             </Link>
             <Link
               to="/services"
-              className="rounded-lg px-5 py-3 bg-gradient-to-r from-violet-600 to-sky-400 text-white font-medium shadow-md"
-              
+              className="rounded-lg px-5 py-3 border border-slate-300 bg-white/70 backdrop-blur"
             >
               Explore services
             </Link>

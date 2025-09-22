@@ -49,3 +49,23 @@ header .container, main .container, footer .container { margin-left: auto; margi
 .sticky-cta-inner { @apply mx-auto max-w-md px-4; }
 .sticky-cta-inner a { @apply w-full block text-center; }
 */
+
+/* Animated gradient background */
+@keyframes chatease-gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient {
+    animation: none !important;
+  }
+}
+
+.animate-gradient {
+  background: linear-gradient(120deg, #38BDF8, #7C3AED, #38BDF8);
+  background-size: 200% 200%;
+  animation: chatease-gradient-shift 14s ease infinite;
+}

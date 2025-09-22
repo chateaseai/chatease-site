@@ -32,7 +32,8 @@ export default function Home() {
             </Link>
             <Link
               to="/services"
-              className="rounded-lg px-5 py-3 border border-slate-300 bg-white/70 backdrop-blur"
+              className="rounded-lg px-5 py-3 bg-gradient-to-r from-violet-600 to-sky-400 text-white font-medium shadow-md"
+              
             >
               Explore services
             </Link>

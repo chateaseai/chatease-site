@@ -59,9 +59,7 @@ header .container, main .container, footer .container { margin-left: auto; margi
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .animate-gradient {
-    animation: none !important;
-  }
+  .animate-gradient { animation: none !important; }
 }
 
 .animate-gradient {

@@ -20,10 +20,10 @@ export default function ChatDemo() {
   }, [idx]);
 
   return (
-    <div className="w-full max-w-md mx-auto rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-slate-900/10 p-4 md:p-5 ring-1 ring-slate-200">
+    <div className="w-full max-w-md mx-auto rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-slate-900/15 p-4 md:p-5">
       <div className="text-xs font-semibold text-slate-700 mb-3">Live Demo</div>
 
-      <div className="space-y-3">
+      <div className="rounded-xl bg-slate-50 border border-slate-200 p-3 space-y-3">
         {SCRIPT.slice(0, idx).map((m, i) => (
           <Bubble key={i} who={m.who} text={m.text} />
         ))}

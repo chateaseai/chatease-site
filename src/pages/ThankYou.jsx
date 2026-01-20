@@ -3,8 +3,14 @@ import Section from '../ui/Section.jsx'
 
 export default function ThankYou() {
   return (
-    <Section title="Thanks! 🎉" subtitle="We've received your message and will reply within 24 hours." narrow>
-      <a href="/" className="btn-secondary mt-6 inline-block">Back to Home</a>
+    <Section
+      title="Kiitos! 🎉"
+      subtitle="Viestisi on vastaanotettu — palaamme sinulle yleensä 24 tunnin kuluessa."
+      narrow
+    >
+      <a href="/" className="btn-secondary mt-6 inline-block">
+        Takaisin etusivulle
+      </a>
     </Section>
   )
 }

@@ -98,7 +98,9 @@ export default function App() {
         <div className="container py-10 text-sm text-slate-600 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
           <div className="flex items-center gap-2">
             <Logo small />
-            <span>©️ {new Date().getFullYear()} ChatEase — Smarter conversations, simplified.</span>
+            <span>
+              ©️ {new Date().getFullYear()} ChatEase — Smarter conversations, simplified.
+            </span>
           </div>
 
           <div className="flex gap-6">

@@ -5,8 +5,15 @@ import Logo from '../ui/Logo.jsx'
 export default function App() {
   const [menuOpen, setMenuOpen] = React.useState(false)
 
-  const navItemClass = ({ isActive }) => nav-item ${isActive ? 'active' : ''}
-  const navItemAboutClass = ({ isActive }) => nav-item about ${isActive ? 'active' : ''}
+  // FIXED: Added backticks for template literals
+  const navItemClass = ({ isActive }) => 
+    `nav-item ${isActive ? 'active' : ''}`
+  
+  const navItemAboutClass = ({ isActive }) => 
+    `nav-item about ${isActive ? 'active' : ''}`
+
+  // Helper to close menu when a link is clicked
+  const closeMenu = () => setMenuOpen(false)
 
   return (
     <div className="min-h-screen">
@@ -47,9 +54,9 @@ export default function App() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <a href="/contact#demo" className="btn-cta">
+            <NavLink to="/contact" className="btn-cta">
               Varaa ilmainen demo
-            </a>
+            </NavLink>
           </div>
 
           {/* Mobile menu button */}
@@ -57,7 +64,7 @@ export default function App() {
             className="md:hidden rounded-xl border px-3 py-2 text-sm"
             onClick={() => setMenuOpen((s) => !s)}
           >
-            Menu
+            {menuOpen ? 'Sulje' : 'Menu'}
           </button>
         </div>
 
@@ -65,14 +72,15 @@ export default function App() {
         {menuOpen && (
           <div className="md:hidden border-t border-slate-200 bg-white">
             <div className="container py-3 flex flex-col gap-2">
-              <a href="/" className="nav-item">Etusivu</a>
-              <a href="/services" className="nav-item">Palvelut</a>
-              <a href="/pricing" className="nav-item">Hinnasto</a>
-              <a href="/about" className="nav-item">Tietoa</a>
-              <a href="/contact" className="nav-item">Yhteystiedot</a>
-              <a href="/contact#demo" className="btn-cta mt-2">
+              {/* FIXED: Changed <a> to <NavLink> to prevent page reloads */}
+              <NavLink to="/" className={navItemClass} onClick={closeMenu}>Etusivu</NavLink>
+              <NavLink to="/services" className={navItemClass} onClick={closeMenu}>Palvelut</NavLink>
+              <NavLink to="/pricing" className={navItemClass} onClick={closeMenu}>Hinnasto</NavLink>
+              <NavLink to="/about" className={navItemClass} onClick={closeMenu}>Tietoa</NavLink>
+              <NavLink to="/contact" className={navItemClass} onClick={closeMenu}>Yhteystiedot</NavLink>
+              <NavLink to="/contact" className="btn-cta mt-2" onClick={closeMenu}>
                 Varaa ilmainen demo
-              </a>
+              </NavLink>
             </div>
           </div>
         )}
@@ -90,8 +98,8 @@ export default function App() {
           </div>
 
           <div className="flex gap-6">
-            <a href="/privacy" className="hover:text-slate-800">Tietosuoja</a>
-            <a href="/terms" className="hover:text-slate-800">Ehdot</a>
+            <NavLink to="/privacy" className="hover:text-slate-800">Tietosuoja</NavLink>
+            <NavLink to="/terms" className="hover:text-slate-800">Ehdot</NavLink>
           </div>
         </div>
       </footer>

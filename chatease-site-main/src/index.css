@@ -63,7 +63,7 @@ header .container, main .container, footer .container { margin-left: auto; margi
 }
 
 .animate-gradient {
-  background: linear-gradient(120deg, #38BDF8, #7C3AED, #38BDF8);
+  background: linear-gradient(120deg, rgba(56,189,248,0.65), rgba(124,58,237,0.65), rgba(56,189,248,0.65));
   background-size: 200% 200%;
   animation: chatease-gradient-shift 14s ease infinite;
 }

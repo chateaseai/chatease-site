@@ -20,7 +20,12 @@ header .container, main .container, footer .container { margin-left: auto; margi
 /* Buttons */
 .btn-primary { @apply inline-flex items-center justify-center rounded-2xl bg-sky px-5 py-3 font-semibold text-white hover:brightness-95 active:brightness-90 transition; }
 .btn-secondary { @apply inline-flex items-center justify-center rounded-2xl border border-navy/20 px-5 py-3 font-medium text-navy hover:bg-white/60 transition; }
-.btn-cta { @apply inline-flex items-center justify-center rounded-2xl text-white px-5 py-3 font-semibold; background: linear-gradient(90deg, #38BDF8, #7C3AED); }
+.btn-cta{
+  @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold text-white transition;
+  background: linear-gradient(90deg, #38BDF8, #7C3AED);
+  box-shadow: 0 14px 30px rgba(124, 58, 237, 0.28);
+  outline: 1px solid rgba(255,255,255,0.55);
+}
 
 /* Cards */
 .card { @apply rounded-2xl bg-white p-6 border border-slate-200 shadow-soft; }

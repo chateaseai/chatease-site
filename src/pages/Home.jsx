@@ -5,17 +5,16 @@ import ChatDemo from '../ui/ChatDemo.jsx';
 export default function Home() {
   return (
     <section className="relative overflow-hidden">
-      {/* Animated gradient backdrop */}
-      <div className="absolute inset-0 animate-gradient opacity-25" aria-hidden="true" />
+      {/* Background (soft, not overpowering) */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-sky-100 via-white to-violet-100" aria-hidden="true" />
+      <div className="pointer-events-none absolute -z-10 left-[-120px] top-[-120px] h-[360px] w-[360px] rounded-full bg-sky-300/30 blur-3xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute -z-10 right-[-140px] top-[40px] h-[420px] w-[420px] rounded-full bg-violet-400/25 blur-3xl" aria-hidden="true" />
 
-      {/* Soft glassy overlay to keep text readable */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.6),_transparent_60%)]" aria-hidden="true" />
-
-      <div className="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 md:py-28">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          {/* LEFT: headline & CTAs */}
+          {/* LEFT */}
           <div className="text-center md:text-left">
-            <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs md:text-sm bg-white/70 backdrop-blur">
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 text-xs md:text-sm bg-white shadow-sm">
               <span className="inline-block h-2 w-2 rounded-full bg-violet-600" />
               Welcome to ChatEase
             </span>
@@ -30,16 +29,14 @@ export default function Home() {
             </p>
 
             <div className="mt-7 flex justify-center md:justify-start gap-3">
-              {/* Match header CTA gradient exactly */}
-              <Link
-                to="/contact"
-                className="rounded-lg px-5 py-3 bg-gradient-to-r from-sky-400 to-violet-600 text-white font-medium"
-              >
+              {/* Use your global CTA button (consistent with header) */}
+              <Link to="/contact" className="btn-cta">
                 Request a demo
               </Link>
+
               <Link
                 to="/services"
-                className="rounded-lg px-5 py-3 border border-slate-300 bg-white/80 backdrop-blur"
+                className="rounded-2xl px-5 py-3 border border-slate-300 bg-white text-slate-900 font-medium shadow-sm hover:bg-slate-50 transition"
               >
                 Explore services
               </Link>
@@ -54,13 +51,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* RIGHT: live chat demo */}
+          {/* RIGHT */}
           <div className="md:pl-6">
             <ChatDemo />
           </div>
         </div>
 
-        {/* Badge row (optional) */}
+        {/* Badges (solid cards) */}
         <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           <Badge>24/7</Badge>
           <Badge>GDPR-ready</Badge>
@@ -74,9 +71,8 @@ export default function Home() {
 
 function Badge({ children }) {
   return (
-    <div className="rounded-xl border bg-white/70 backdrop-blur p-4 text-center text-sm text-slate-700">
+    <div className="rounded-xl border border-slate-200 bg-white p-4 text-center text-sm text-slate-700 shadow-sm">
       {children}
     </div>
   );
 }
-

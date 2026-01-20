@@ -20,15 +20,17 @@ export default function ChatDemo() {
   }, [idx]);
 
   return (
-    <div className="w-full max-w-md mx-auto rounded-2xl border bg-white/80 backdrop-blur shadow-sm p-4 md:p-5">
-      <div className="text-xs text-slate-500 mb-3">Live Demo</div>
+    <div className="w-full max-w-md mx-auto rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-slate-900/10 p-4 md:p-5 ring-1 ring-slate-200">
+      <div className="text-xs font-semibold text-slate-700 mb-3">Live Demo</div>
+
       <div className="space-y-3">
         {SCRIPT.slice(0, idx).map((m, i) => (
           <Bubble key={i} who={m.who} text={m.text} />
         ))}
       </div>
-      <div className="mt-4 text-xs text-slate-500">
-        Powered by <span className="font-medium text-violet-700">ChatEase</span>
+
+      <div className="mt-4 text-xs text-slate-600">
+        Powered by <span className="font-semibold text-violet-700">ChatEase</span>
       </div>
     </div>
   );
@@ -37,13 +39,13 @@ export default function ChatDemo() {
 function Bubble({ who, text }) {
   const isBot = who === 'bot';
   return (
-    <div className={`flex ${isBot ? 'justify-start' : 'justify-end'}`}>
+    <div className={isBot ? 'flex justify-start' : 'flex justify-end'}>
       <div
         className={[
-          'max-w-[80%] px-4 py-2 rounded-2xl text-sm shadow-sm',
+          'max-w-[80%] px-4 py-2 rounded-2xl text-sm shadow-sm leading-relaxed',
           isBot
-            ? 'bg-gradient-to-r from-sky-400 to-violet-600 text-white rounded-bl-sm'
-            : 'bg-white border text-slate-900 rounded-br-sm'
+            ? 'bg-gradient-to-r from-sky-400 to-violet-600 text-white rounded-bl-sm shadow-md shadow-violet-500/20'
+            : 'bg-slate-200 border border-slate-300 text-slate-900 rounded-br-sm'
         ].join(' ')}
       >
         {text}

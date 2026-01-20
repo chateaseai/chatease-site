@@ -38,13 +38,19 @@ export default function ChatDemo() {
 
 function Bubble({ who, text }) {
   const isBot = who === 'bot';
+
+  const botStyle = {
+    background: 'linear-gradient(90deg, #38BDF8, #7C3AED)',
+  };
+
   return (
     <div className={isBot ? 'flex justify-start' : 'flex justify-end'}>
       <div
+        style={isBot ? botStyle : undefined}
         className={[
           'max-w-[80%] px-4 py-2 rounded-2xl text-sm shadow-sm leading-relaxed',
           isBot
-            ? 'bg-gradient-to-r from-sky-400 to-violet-600 text-white rounded-bl-sm shadow-md shadow-violet-500/20'
+            ? 'text-white rounded-bl-sm shadow-md'
             : 'bg-slate-200 border border-slate-300 text-slate-900 rounded-br-sm'
         ].join(' ')}
       >

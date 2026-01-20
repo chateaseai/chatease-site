@@ -5,6 +5,9 @@ import Logo from '../ui/Logo.jsx'
 export default function App() {
   const [menuOpen, setMenuOpen] = React.useState(false)
 
+  const navItemClass = ({ isActive }) => nav-item ${isActive ? 'active' : ''}
+  const navItemAboutClass = ({ isActive }) => nav-item about ${isActive ? 'active' : ''}
+
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 backdrop-blur bg-white/85 border-b border-slate-200">
@@ -14,45 +17,30 @@ export default function App() {
             <div className="flex flex-col leading-tight">
               <span className="text-lg font-semibold tracking-tight">ChatEase</span>
               <span className="text-[11px] text-slate-600 tracking-wide mt-0.5">
-                AI Chatbots · Automation
+                AI-chatbotit · Automaatio
               </span>
             </div>
           </div>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-2">
-            <NavLink
-              to="/"
-              className={({ isActive }) => nav-item ${isActive ? 'active' : ''}}
-            >
+            <NavLink to="/" className={navItemClass}>
               Etusivu
             </NavLink>
 
-            <NavLink
-              to="/services"
-              className={({ isActive }) => nav-item ${isActive ? 'active' : ''}}
-            >
+            <NavLink to="/services" className={navItemClass}>
               Palvelut
             </NavLink>
 
-            <NavLink
-              to="/pricing"
-              className={({ isActive }) => nav-item ${isActive ? 'active' : ''}}
-            >
+            <NavLink to="/pricing" className={navItemClass}>
               Hinnasto
             </NavLink>
 
-            <NavLink
-              to="/about"
-              className={({ isActive }) => nav-item about ${isActive ? 'active' : ''}}
-            >
+            <NavLink to="/about" className={navItemAboutClass}>
               Tietoa
             </NavLink>
 
-            <NavLink
-              to="/contact"
-              className={({ isActive }) => nav-item ${isActive ? 'active' : ''}}
-            >
+            <NavLink to="/contact" className={navItemClass}>
               Yhteystiedot
             </NavLink>
           </nav>
@@ -98,14 +86,12 @@ export default function App() {
         <div className="container py-10 text-sm text-slate-600 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
           <div className="flex items-center gap-2">
             <Logo small />
-            <span>
-              ©️ {new Date().getFullYear()} ChatEase — Smarter conversations, simplified.
-            </span>
+            <span>© {new Date().getFullYear()} ChatEase — fiksummat keskustelut, helpommin.</span>
           </div>
 
           <div className="flex gap-6">
-            <a href="/privacy" className="hover:text-slate-800">Privacy</a>
-            <a href="/terms" className="hover:text-slate-800">Terms</a>
+            <a href="/privacy" className="hover:text-slate-800">Tietosuoja</a>
+            <a href="/terms" className="hover:text-slate-800">Ehdot</a>
           </div>
         </div>
       </footer>
